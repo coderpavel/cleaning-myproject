@@ -1,0 +1,20 @@
+{
+  "serverSettings": {
+    "port": 3000
+  },
+  "jwt": {
+    "algorithm": "RS256",
+    "jwtSecret": "jwtSecret",
+    "tokenType": {
+        "access": "access",
+        "refresh": "refresh"
+    },
+    "expiresIn": "7d",
+    "refreshExpiresIn": "10h"
+    
+  },
+  "db": {
+    "connectPath": "mongodb://localhost/koaDB",
+    "connectPathWorld": "mongodb://pavel:123456789z@ds139944.mlab.com:39944/dbconnector"
+  }
+}
