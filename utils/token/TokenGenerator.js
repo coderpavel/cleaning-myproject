@@ -29,8 +29,7 @@ class TokenGenerator {
   }
 
   static verify(token, secret) {
-    const userPayload = jwt.verify(token, secret);
-    return userPayload;
+    return jwt.verify(token, secret);
   }
 }
 

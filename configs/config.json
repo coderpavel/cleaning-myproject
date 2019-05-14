@@ -3,14 +3,14 @@
     "port": 3000
   },
   "jwt": {
-    "algorithm": "RS256",
-    "jwtSecret": "jwtSecret",
+    "algorithm": "HS256",
+    "jwtSecret": "94D2D2E38D8305F8F2C741CD366ED7AE435CECDB4688E62133DA137A142FC876",
     "tokenType": {
         "access": "access",
         "refresh": "refresh"
     },
-    "expiresIn": "7d",
-    "refreshExpiresIn": "10h"
+    "expiresIn": "7 days",
+    "refreshExpiresIn": "3650 days"
     
   },
   "db": {

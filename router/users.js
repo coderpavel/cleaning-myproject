@@ -1,24 +1,21 @@
 const Router = require("koa-router");
 const router = new Router();
 const User = require("../controllers/User");
-// test token gen
-const TokenGenerator = require("../utils/token/TokenGenerator");
-const auth = require("../middleware/auth");
 
 
 router
   .prefix("/api/users")
 
-  .post("/", async ctx => {
-    try {
-      const user = await User.createUser(ctx.request.body);
-      ctx.response.body = user;
-    } catch (error) {
-      console.log("error", error);
-      ctx.status = 500;
-      ctx.body = "Internal error";
-    }
-  })
+  // .post("/", async ctx => {
+  //   try {
+  //     const user = await User.createUser(ctx.request.body);
+  //     ctx.response.body = user;
+  //   } catch (error) {
+  //     console.log("error", error);
+  //     ctx.status = 500;
+  //     ctx.body = "Internal error";
+  //   }
+  // })
 
   .get("/", async ctx => {
     try {

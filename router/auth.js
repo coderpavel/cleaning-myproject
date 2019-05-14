@@ -1,9 +1,9 @@
 const Router = require("koa-router");
 const router = new Router();
 const User = require("../controllers/User");
-// test token gen
+// test token generation
 const TokenGenerator = require("../utils/token/TokenGenerator");
-const auth = require("../middleware/auth");
+
 
 router
   .prefix("/api/auth")
@@ -12,15 +12,12 @@ router
     switch (ctx.params.action) {
       case "registration": {
         const user = User.createUser(ctx.request.body);
-        const token = TokenGenerator.sign(user);
-        ctx.response.body = token;
+        ctx.response.body = TokenGenerator.sign(user);
         break;
       }
       case "login": {
-        console.log(ctx.request.body.email);
         const user = User.findUserWithParam(ctx.request.body.email);
-        const token = TokenGenerator.sign(user);
-        ctx.response.body = token;
+        ctx.response.body = await TokenGenerator.sign(user);
         break;
       }
       default: {
