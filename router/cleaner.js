@@ -10,6 +10,8 @@ router
             const user = await User.createUser(ctx.request.body);
             ctx.response.body = user;
         } catch (error) {
+// error.statusCode = 500;
+// return next(error);
             console.log("error", error);
             ctx.status = 500;
             ctx.body = "Internal error";
